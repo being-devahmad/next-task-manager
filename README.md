@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Manager Application
 
-## Getting Started
+This is a feature-rich **Task Manager Application** built with modern web technologies, including **Next.js 15**, **Shadcn UI**, **Auth.js v5**, **Prisma**, and **PostgreSQL**. This application provides a secure and scalable way to manage tasks efficiently.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. [Technologies Used](#technologies-used)
+2. [Features](#features)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+5. [Environment Variables](#environment-variables)
+6. [Database Setup](#database-setup)
+7. [Running the Application](#running-the-application)
+8. [Folder Structure](#folder-structure)
+9. [Contributing](#contributing)
+10. [License](#license)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **[Next.js 15](https://nextjs.org/)**: Framework for building server-rendered React applications.
+- **[Shadcn UI](https://ui.shadcn.dev/)**: Component library with Tailwind CSS integration for a beautiful UI.
+- **[Auth.js v5](https://authjs.dev/)**: Authentication library for secure login and session management.
+- **[Prisma](https://www.prisma.io/)**: Type-safe ORM for database interactions.
+- **[PostgreSQL](https://www.postgresql.org/)**: Robust relational database system.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for custom designs.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **User Authentication**: Sign up, sign in, and sign out using Google OAuth and credentials (email/password).
+- **Task Management**: Create, update, delete, and mark tasks as completed.
+- **Dashboard**: A personalized user dashboard to manage tasks.
+- **Protected Routes**: Access control using Auth.js to restrict certain routes to authenticated users only.
+- **Responsive Design**: Beautiful UI built with Tailwind CSS and Shadcn UI components.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Make sure you have the following installed:
+
+- **Node.js (v16 or higher)**: [Download here](https://nodejs.org/)
+- **PostgreSQL Database**: [Download here](https://www.postgresql.org/download/)
+- **Git**: [Download here](https://git-scm.com/downloads)
+
+---
+
+## Installation
+
+Follow these steps to get started with the application:
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/task-manager.git
+   cd task-manager
+   npm install
+
+   ```
+
+2. \*\*Set up environment variables
+
+# Database Configuration
+
+DATABASE_URL=postgresql://username:password@localhost:5432/task_manager_db
+
+# Google OAuth Credentials (for Google Authentication)
+
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# NextAuth Secret (for signing tokens)
+
+NEXTAUTH_SECRET=your-random-generated-secret
+Set Up the Database: Run the following Prisma commands to generate the Prisma Client and apply migrations:
+
+bash
+Copy
+Edit
+npx prisma generate
+npx prisma migrate dev --name init
+
